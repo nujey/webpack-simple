@@ -1,8 +1,15 @@
 {
   "name": "webpack-simple",
   "version": "1.0.0",
-  "description": "'这是一个关于webpack的test'",
+  "description": "",
+  "private": true,
   "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "webpack": "^4.31.0",
+    "webpack-cli": "^3.3.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,16 +17,11 @@
     "type": "git",
     "url": "git+https://github.com/nujey/webpack-simple.git"
   },
-  "keywords": [
-    "webpack"
-  ],
-  "author": "onion[zhangfeng]",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nujey/webpack-simple/issues"
   },
-  "homepage": "https://github.com/nujey/webpack-simple#readme",
-  "devDependencies": {
-    "webpack": "^3.10.0"
-  }
+  "homepage": "https://github.com/nujey/webpack-simple#readme"
 }
