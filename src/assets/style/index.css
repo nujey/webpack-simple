@@ -1,3 +1,13 @@
+/* @font-face {
+  font-family: 'myFont';
+  /* src: url('./iconfont.woff') format('woff'), */
+       /* url('./iconfont.woff2') format('woff2'); */
+  /* font-weight: 600; */
+  /* font-style: normal; */
+/* } */
+
 div {
   color: #f00;
+  font-family: 'myFont';
+  background: url("../images/cc.jpeg") no-repeat 0 0;
 }
