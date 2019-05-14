@@ -1,11 +1,13 @@
 import _ from 'lodash'
 import './assets/style/index.css'
 import cc from './assets/images/cc.jpeg'
-import printMe from './print'
+
+if(process.env.NODE_ENV !== 'production') {
+  console.log('Looks like we are in development mode!')
+}
 
 function component () {
   let element = document.createElement('div')
-  printMe()
   element.innerHTML = _.join(['Hola', 'webpack'], '~')
 
   var myImg = new Image()
