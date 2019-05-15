@@ -5,7 +5,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = merge(common, {
   mode: 'production',
-  devtool: 'source-map',
+  // devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].[ext]',
@@ -14,14 +14,13 @@ module.exports = merge(common, {
   ],
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "style-loader"
-        ]
-      }
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+      //     "css-loader"
+      //   ]
+      // }
     ]
   }
 })
