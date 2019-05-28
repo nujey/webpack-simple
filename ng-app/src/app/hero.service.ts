@@ -11,25 +11,16 @@ import { catchError, map, tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+}
 export class HeroService {
 
   constructor(
     private http: HttpClient,
     private messageService: MessageService
   ) { }
-  private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`)
-  }
   private heroesUrl = 'api/heroes'
-
-  private handleerror<T>(operation = 'operation', result ?: T) {
-    return (error: any): Observable<T> => {
-      console.log(error)
-      this.log(`${operation} failed: ${error.message}`);
-      return of(result as T)
-    }
-  }
 
   getHero(id: number): Observable<Hero> {
     this.messageService.add(`HeroService: fetched hero id=${id}`)
@@ -43,5 +34,21 @@ export class HeroService {
         tap(_ => this.log('fetched heroes')),
         catchError(this.handleError<Hero[]>('getHeroes', []))
       )
+  }
+  updateHero(hero: Hero): Observable<any> {
+    return this.http.put(this.heroesUrl, hero, httpOptions).pipe(
+      tap(_ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
+    )
+  }
+  private handleError <T>(operation = 'operation', result ?: T) {
+    return (error: any): Observable<T> => {
+      console.log(error)
+      this.log(`${operation} failed: ${error.message}`);
+      return of(result as T)
+    }
+  }
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`)
   }
 }
