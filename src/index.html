@@ -31,6 +31,23 @@
       el: '#app',
       router
     })
+    let list = [{name: 'a', value: 1}, {name: 'a', value: 2}, {name: 'b', value: 4}]
+    function test(arr, name, value) {
+      var tempObj = {}, result = []
+      for(let i = 0; i < arr.length; i++) {
+        // tempObj[arr[i][name]] ? '' : tempObj[arr[i][name]] = 'true' && result.push(arr[i])
+        if(tempObj[arr[i][name]]) {
+          tempObj[arr[i][name] + 'value'] = tempObj[arr[i][name] + value] + arr[i][value]
+          console.log(result)
+        } else {
+          tempObj[arr[i][name]] = true
+          tempObj[arr[i][name] + value] = arr[i][value]
+          result.push(arr[i])
+        }
+      }
+      return result
+    }
+    console.log(test(list, 'name', 'value'))
   </script>
 </body>
 </html>
