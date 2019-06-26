@@ -37,4 +37,6 @@ import { DashboardComponent } from './dashboard/dashboard.component'
   // 只有根模块才应该设置这个bootstrap属性
   bootstrap: [AppComponent]
 })
+// ngModule为组件提供编译上下文环境 根模块总会有一个根组件
+// 任何模块都能包含任意数量的其他组件，组件可以通过路由器加载 也可以通过模板创建
 export class AppModule { }
