@@ -49,8 +49,7 @@ import { DashboardComponent } from './dashboard/dashboard.component'
 // NgModule系统与javascrippt用来管理对象的模块系统不同，并且没有直接关系
 // js中每一个文件是一个模块，文件中定义的所有对象都属于那个模块
 
-// 通过wxport 模块可以把它的某些对象声明为公共的
+// 通过export 模块可以把它的某些对象声明为公共的
 // 可以使用import语句来访问这些公共的对象
-
 
 export class AppModule { }
