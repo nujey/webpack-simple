@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 // 组件的元数据告诉angular到哪里获取需要的主要构造块 用来创建和展示这个组件以及视图
 // 具体来说 就是把一个模板和组件关联起来 描述一个视图
 @Component({
+  // css选择器 在html中找到选择器对应的标签 插入组件 
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
