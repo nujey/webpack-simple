@@ -16,6 +16,7 @@ export class HerosComponent implements OnInit {
   // }
   heroes: Hero[]
   // selectedHero: Hero
+  // 查看组件类的构造函数，来决定组件依赖哪些服务或者依赖项
   constructor(private heroService: HeroService) { 
 
   }
