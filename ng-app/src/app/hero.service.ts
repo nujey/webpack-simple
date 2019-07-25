@@ -17,7 +17,6 @@ import { catchError, map, tap } from 'rxjs/operators';
   // 如果要注册提供商的话 就需要在服务的@injectable()装饰器中提供元数据
   // 或者在NgModule或@Component()的元数据中
 
-  
 @Injectable({
   providedIn: 'root'
 })
