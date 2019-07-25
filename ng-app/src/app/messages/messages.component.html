@@ -2,5 +2,6 @@
   <h2>Messages</h2>
   <button class="clear"
           (click)="messageService.clear()">clear</button>
+          ngfor的时候不要忘记*号，是模版语法
   <div *ngFor="let message of messageService.messages">{{message}}</div>
 </div>
