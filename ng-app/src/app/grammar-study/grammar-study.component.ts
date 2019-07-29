@@ -11,5 +11,7 @@ export class GrammarStudyComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  deleteHero(): void {
+    
+  }
 }

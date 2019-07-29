@@ -16,4 +16,13 @@
     <p>执行迅速：变更检测周期后执行模板表达式，变更检测周期会被多种异步活动触发，比如promise解析、http结果、定时器事件、按键、鼠标移动</p>
     <p>尽量把应用程序和业务逻辑限制在组件中</p>
   </p>
+  <div>
+    模板语法
+    <p>模板语法用来响应绑定目标触发的事件，出现在等号右边的引号</p>
+    <a href="javascript:void(0)" (click)="deleteHero()">测试</a>
+    <button (click)="deleteHero()"></button>
+    <button (click)="onSave($event)">Save</button>
+    <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
+    <form #heroForm action="" (ngSubmit)="onSubmit(heroForm)"></form>
+  </div>
 </div>
