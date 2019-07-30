@@ -31,4 +31,35 @@
     <p (target)="statement" on-target="targetment">从视图到数据源的单向绑定</p>
     <p [(target)]="expression" bindon-target="expression">双向绑定</p>
   </div>
+
+  <div>
+    新的思维模型
+    <div class="">special</div>
+    <img src="assets/x/xx.png" alt="">
+    <p>模板绑定是通过property和事件来工作的，而不是attribute</p>
+  </div>
+
+  <div>
+    绑定目标
+    数据绑定的目标是DOM中的某些东西。这个目标可能是(元素|组件|指令)property、事件、极少数的attribute
+    
+    1、属性：
+      <img [src]="url" alt="">
+      <app-gero-detail [hero]="currentHero"></app-gero-detail>
+      <div [class]="{'A': isA}"></div>
+
+    2、事件
+      <button (click)="onSave()"></button>
+      <app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>
+      <div (myClick)="clicked = $event" clickable></div>
+    3、双向
+      <input type="text" [(ngModel)]="name">
+    4、attribute个别情况
+      <div [attr.aria-label]="help"></div>
+    5、CSS
+      <div [class.special]="isSpecial"></div>
+    6、style
+      <div [style.color]="isSpecial ? 'res' : 'green'"></div>
+  </div>
+
 </div>
