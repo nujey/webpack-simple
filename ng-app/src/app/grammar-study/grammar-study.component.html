@@ -16,4 +16,54 @@
     <p>执行迅速：变更检测周期后执行模板表达式，变更检测周期会被多种异步活动触发，比如promise解析、http结果、定时器事件、按键、鼠标移动</p>
     <p>尽量把应用程序和业务逻辑限制在组件中</p>
   </p>
+  <div>
+    模板语法
+    <p>模板语法用来响应绑定目标触发的事件，出现在等号右边的引号</p>
+    <a href="javascript:void(0)" (click)="deleteHero()">测试</a>
+    <button (click)="deleteHero()"></button>
+    <button (click)="onSave($event)">Save</button>
+    <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
+    <form #heroForm action="" (ngSubmit)="onSubmit(heroForm)"></form>
+  </div>
+  <div>
+    数据绑定
+    <p [target]="xx" bind-target="xx">从数据源到视图{{expression}}</p>
+    <p (target)="statement" on-target="targetment">从视图到数据源的单向绑定</p>
+    <p [(target)]="expression" bindon-target="expression">双向绑定</p>
+  </div>
+
+  <div>
+    新的思维模型
+    <div class="">special</div>
+    <img src="assets/x/xx.png" alt="">
+    <p>模板绑定是通过property和事件来工作的，而不是attribute</p>
+  </div>
+
+  <div>
+    绑定目标
+    数据绑定的目标是DOM中的某些东西。这个目标可能是(元素|组件|指令)property、事件、极少数的attribute
+    
+    1、属性：
+      <img [src]="url" alt="">
+      <app-gero-detail [hero]="currentHero"></app-gero-detail>
+      <div [class]="{'A': isA}"></div>
+
+    2、事件
+      <button (click)="onSave()"></button>
+      <app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>
+      <div (myClick)="clicked = $event" clickable></div>
+    3、双向
+      <input type="text" [(ngModel)]="name">
+    4、attribute个别情况
+      <div [attr.aria-label]="help"></div>
+    5、CSS
+      <div [class.special]="isSpecial"></div>
+    6、style
+      <div [style.color]="isSpecial ? 'res' : 'green'"></div>
+  </div>
+  <div>
+    属性绑定
+    <button [disabled="isUnchanged"]></button>
+    <div [ngClass]="classes"></div>
+  </div>
 </div>
