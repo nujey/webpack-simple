@@ -65,5 +65,12 @@
     属性绑定
     <button [disabled="isUnchanged"]></button>
     <div [ngClass]="classes"></div>
+    <p>单向输入</p>
+    不能使用属性绑定来从目标元素拉取值，也不能绑定到目标元素的属性来读取，只能设置
+    1、不能用属性绑定来调用目标元素的方法
+    2、元素触发事件，可以通过事件绑定来监听
+    <p>绑定目标</p>
+    <img [src]="heroImageUrl" alt="">
+    <img bind-src="url" alt="">
   </div>
 </div>
