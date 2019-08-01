@@ -72,5 +72,26 @@
     <p>绑定目标</p>
     <img [src]="heroImageUrl" alt="">
     <img bind-src="url" alt="">
+    3、消除副作用
+    模板表达式的计算不能有可见的副作用
+    <p>表达式可能会调用具有副作用的属性或者方法，但是angular没法知道这一点也没办法阻止</p>
+    <p>模板表达式应该返回目标属性所需的类型值，如果目标属性想要字符串，就返回字符串</p>
+    <app-hero-detail prefix="string" [hero]="currentHero"></app-hero-detail>
+    <p>
+      <img src="{{url}}" alt="">
+      <img [src]="url" alt="">
+
+      <span>{{title}}</span>
+      <span [innerHTML]="title"></span>
+      <p>如果是字符串，建议插值，如果不是纯字符串，那就用属性绑定</p>
+    </p>
+  </div>
+
+  <div>
+    <h3>attribute\class\style绑定</h3>
+    attribute绑定来直接设置attribute值
+    <p>当元素没有属性可绑的时候，就必须使用attribute绑定</p>
+    <tr><td [attr.colspan="1 + 1"]></td></tr>
+    <button [attr.aria-label]="actionName"></button>
   </div>
 </div>
