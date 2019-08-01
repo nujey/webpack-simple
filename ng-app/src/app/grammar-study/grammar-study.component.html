@@ -93,5 +93,13 @@
     <p>当元素没有属性可绑的时候，就必须使用attribute绑定</p>
     <tr><td [attr.colspan="1 + 1"]></td></tr>
     <button [attr.aria-label]="actionName"></button>
+
+    CSS类绑定
+    <p>可以从元素的class attribute上添加和移除CSS类型</p>
+    css类绑定语法与属性绑定类似，但是方括号中的部分不是元素的属性名，而是由class前缀【class.class-name】
+    <div class="bad curly special" [class]="badCurly"></div>
+    <div [class.special]="isSpecial"></div>
+    当然，我们更多的还是用ngClass来管理多个类名，单个类名的时候就用类绑定
+    <div [ngClass]="currentClasses">设置多个类名的时候</div>
   </div>
 </div>

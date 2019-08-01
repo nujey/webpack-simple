@@ -8,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class GrammarStudyComponent implements OnInit {
 
   constructor() { }
-
+  canSave: true
+  isSpecial: false
+  currentClasses: { }
   ngOnInit() {
   }
   deleteHero(): void {
     
+  }
+  setCurrentClasses() {
+    this.currentClasses = {
+      'saveable': this.canSave,
+      'special': this.isSpecial ? true : false
+    }
   }
 }
