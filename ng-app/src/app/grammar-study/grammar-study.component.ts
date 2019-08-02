@@ -11,6 +11,7 @@ export class GrammarStudyComponent implements OnInit {
   canSave: true
   isSpecial: false
   currentClasses: { }
+  currentStyles: {}
   ngOnInit() {
   }
   deleteHero(): void {
@@ -20,6 +21,11 @@ export class GrammarStudyComponent implements OnInit {
     this.currentClasses = {
       'saveable': this.canSave,
       'special': this.isSpecial ? true : false
+    }
+  }
+  seturrentStyles() {
+    this.currentStyles = {
+      'font-size': this.isSpecial ? '24px' : '12px'
     }
   }
 }
