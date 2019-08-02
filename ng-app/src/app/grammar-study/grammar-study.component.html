@@ -102,6 +102,8 @@
     当然，我们更多的还是用ngClass来管理多个类名，单个类名的时候就用类绑定
     <div [ngClass]="currentClasses">设置多个类名的时候</div>
   </div>
+
+
   <div>
     样式绑定[单一样式的时候可以用样式绑定]
     样式绑定的语法和属性绑定类似，但是方括号中的部分不是元素的属性名
@@ -113,5 +115,15 @@
 
     多个样式的时候，建议NgStyle
     <div [ngStyle]="currentStyles"></div>
+  </div>
+
+  <div>
+    事件绑定
+    事件绑定允许监听事件，比如按键、鼠标移动、点击触屏
+    <button (click)="onSave($event)"></button>
+    <button on-click="onSave($event)"></button>
+    <button (myClick)="clickMessage = $event" clickable></button>
+
+    <input type="text" [value]="currentItem.name" (input)="currentItem.name = $event.target.value">
   </div>
 </div>
