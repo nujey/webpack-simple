@@ -8,6 +8,7 @@
   <p>模板表达式:
     要尽量避免引发副作用的表达式，比如= +=, -=或者自增自减
   </p>
+
   <p>
     表达式上下文：
     <p>表达式的上下文可以包括组件之外的对象</p>
@@ -16,6 +17,7 @@
     <p>执行迅速：变更检测周期后执行模板表达式，变更检测周期会被多种异步活动触发，比如promise解析、http结果、定时器事件、按键、鼠标移动</p>
     <p>尽量把应用程序和业务逻辑限制在组件中</p>
   </p>
+
   <div>
     模板语法
     <p>模板语法用来响应绑定目标触发的事件，出现在等号右边的引号</p>
@@ -25,6 +27,7 @@
     <button *ngFor="let hero of heroes" (click)="deleteHero(hero)">{{hero.name}}</button>
     <form #heroForm action="" (ngSubmit)="onSubmit(heroForm)"></form>
   </div>
+
   <div>
     数据绑定
     <p [target]="xx" bind-target="xx">从数据源到视图{{expression}}</p>
@@ -47,7 +50,6 @@
       <img [src]="url" alt="">
       <app-gero-detail [hero]="currentHero"></app-gero-detail>
       <div [class]="{'A': isA}"></div>
-
     2、事件
       <button (click)="onSave()"></button>
       <app-hero-detail (deleteRequest)="deleteHero()"></app-hero-detail>
@@ -61,6 +63,7 @@
     6、style
       <div [style.color]="isSpecial ? 'res' : 'green'"></div>
   </div>
+
   <div>
     属性绑定
     <button [disabled="isUnchanged"]></button>
@@ -126,4 +129,19 @@
 
     <input type="text" [value]="currentItem.name" (input)="currentItem.name = $event.target.value">
   </div>
+
+  <div class="app-delete">
+    <h3>EventEmitter实现自定义事件</h3>
+    <img src="{{url}}" alt="" [style.display]="displayNone">
+    <span [style.text-decoration]="lineThrough">{{item.name}}</span>
+    <button (click)="delete()">Delete</button>
+  </div>
+  <app-delete (deleteRequest)="deleteItem($event)" [item]="currentItem"></app-delete>
+
+  <div class="app-resize">
+    <h2>双向数据绑定</h2>
+    <button (click)="dec()">-</button>
+    <button (click)="inc()"></button>
+  </div>
+  <spp-sizer [size]="fontSizePx" (sizeChange)="fontSizePx=$event"></spp-sizer>
 </div>
