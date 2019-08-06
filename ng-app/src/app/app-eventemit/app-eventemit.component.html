@@ -1,3 +1,13 @@
 <p>
-  app-eventemit works!
+  <div>
+    内置指令
+    内置属性指令
+      <div [ngLCass]="currentClasses"></div>
+      <div [ngStyle]="currentStyles"></div>
+      <input type="text" [(ngModel)]="currentHero.name" (input)="currentHero.name = $event.target.value">
+    内置结构指令
+      html布局、塑造或者是重塑DOM结构，比如添加、移除、操纵
+      NgIf、NgSwitch、NgForOf
+      1、为什么要用星号呢，这里简化乐的语法糖
+  </div>
 </p>
