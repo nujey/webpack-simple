@@ -10,6 +10,8 @@
       NgIf、NgSwitch、NgForOf
       1、为什么要用星号呢，这里简化乐的语法糖，angular会把*ngIf翻译为ng-template元素
       <div *ngFor="let hero of heroes; let i = index; let odd='odd' trackBy: trackById" [class.odd]="odd"></div>
-      
+      模板输入变量和模板引用变量是不同的
+      每个宿主元素上只能用一个结构型指令
+      比如一个div上面不能同时出现ngIf ngFor
   </div>
 </p>
