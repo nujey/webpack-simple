@@ -8,6 +8,8 @@
     内置结构指令
       html布局、塑造或者是重塑DOM结构，比如添加、移除、操纵
       NgIf、NgSwitch、NgForOf
-      1、为什么要用星号呢，这里简化乐的语法糖
+      1、为什么要用星号呢，这里简化乐的语法糖，angular会把*ngIf翻译为ng-template元素
+      <div *ngFor="let hero of heroes; let i = index; let odd='odd' trackBy: trackById" [class.odd]="odd"></div>
+      
   </div>
 </p>
