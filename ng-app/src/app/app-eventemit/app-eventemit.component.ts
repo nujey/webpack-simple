@@ -11,5 +11,7 @@ export class AppEventemitComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  trackByHeroes(index: number, hero: Hero): number {
+    return hero.id
+  }
 }

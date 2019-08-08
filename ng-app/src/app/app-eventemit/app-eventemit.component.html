@@ -9,15 +9,30 @@
       html布局、塑造或者是重塑DOM结构，比如添加、移除、操纵
       NgIf、NgSwitch、NgForOf
       1、为什么要用星号呢，这里简化乐的语法糖，angular会把*ngIf翻译为ng-template元素
+      <app-hero-detail *ngIf="isActive"></app-hero-detail>
       <div *ngFor="let hero of heroes; let i = index; let odd='odd' trackBy: trackById" [class.odd]="odd"></div>
       模板输入变量和模板引用变量是不同的
       每个宿主元素上只能用一个结构型指令
       比如一个div上面不能同时出现ngIf ngFor
+
+      防范空指针错误
+      ngIf指令通常会用来防范空指针错误。而显示和隐藏的方式是无法防范的
+      <div *ngIf="currentHero">{{currentHero.name}}</div>
+      <div *ngIf="nullHero">{{nullHero.name}}</div>
+      ngFor
+      <div *ngFor="let hero of heroes">{{hero.name}}</div>
+      trackBy可以避免原来已经渲染的列表项重新渲染，是一个方法
+      <div *ngFor="let hero of heroes; trackBy: trackByHeroes"></div>
+
+      ngSwitch
+      ngSwitch是主控指令，属性型指令
+      ngSwitchCase、ngSwitchDefault是结构型指令 会影响DOM结构
       <div [ngSwitch]="hero?.emotion">
         <app-happy *ngSwitchCase="'happy'" [hero]="hero"></app-happy>
         <app-happy *ngSwitchCase="'sad'" [hero]="sad"></app-happy>
         <app-happy *ngSwitchCase="'confused'" [hero]="confused"></app-happy>
         <app-happy *ngSwitchDefault [hero]="hero"></app-happy>
       </div>
+      
   </div>
 </p>
