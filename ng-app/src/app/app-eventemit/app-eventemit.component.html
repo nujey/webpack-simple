@@ -13,5 +13,11 @@
       模板输入变量和模板引用变量是不同的
       每个宿主元素上只能用一个结构型指令
       比如一个div上面不能同时出现ngIf ngFor
+      <div [ngSwitch]="hero?.emotion">
+        <app-happy *ngSwitchCase="'happy'" [hero]="hero"></app-happy>
+        <app-happy *ngSwitchCase="'sad'" [hero]="sad"></app-happy>
+        <app-happy *ngSwitchCase="'confused'" [hero]="confused"></app-happy>
+        <app-happy *ngSwitchDefault [hero]="hero"></app-happy>
+      </div>
   </div>
 </p>
