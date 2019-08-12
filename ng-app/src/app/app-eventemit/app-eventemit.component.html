@@ -33,5 +33,10 @@
         <app-happy *ngSwitchCase="'confused'" [hero]="confused"></app-happy>
         <app-happy *ngSwitchDefault [hero]="hero"></app-happy>
       </div>
+      模板引用变量
+      模板引用变量通常引用模板中的某个DOM元素
+      使用#号来声明引用变量 #xx就是生命一个叫xx的phone来引用元素
+      <input type="text" #phone placeholder="phone number">
+      <button (click)="callPhone(phone.value)"></button>
   </div>
 </p>
