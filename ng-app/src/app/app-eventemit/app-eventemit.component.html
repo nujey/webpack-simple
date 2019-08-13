@@ -38,5 +38,21 @@
       使用#号来声明引用变量 #xx就是生命一个叫xx的phone来引用元素
       <input type="text" #phone placeholder="phone number">
       <button (click)="callPhone(phone.value)"></button>
+      获取模板引用变量的值
+      <form action="" (ngSubmit)="onSubmit(heroForm)" #heroForm="ngForm">
+        <div class="form-group">
+          <label for="name">name
+            <input type="text" class="form-control" name="name" required [(ngModel)]="hero.name">
+          </label>
+        </div>
+        <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
+      </form>
+      <div [hidden]="!heroForm.form.valid">{{submitMessage}}</div>
+      模板引用变量和模板输入变量是不同的
+      模板引用变量的作用范围是整个模板
+      不要在同一个模板中多次定义同一个变量名，否则它在运行的期间是无法确定的
+      可以用ref代替# 
+      <input type="text" ref-fax placeholder="fax number">
+      <button (click)="callFax(fax.value)"></button>
   </div>
 </p>
