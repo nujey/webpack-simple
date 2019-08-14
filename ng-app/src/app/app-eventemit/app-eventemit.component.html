@@ -54,5 +54,18 @@
       可以用ref代替# 
       <input type="text" ref-fax placeholder="fax number">
       <button (click)="callFax(fax.value)"></button>
+      输入输出属性
+      输入属性是一个带有@input装饰器的可设置属性，当属性绑定的形式被绑定的时候，值会流入这个属性
+      输出属性是一个带有@output装饰器的可观察对象的属性，基本上返回的就是angular的eventemitter, 通过事件绑定的时候，值会流出这个属性
+      <app-hero-detaiil [hero]="currentHero" (deleteRequest)="deleteHero($event"></app-hero-detaiil>
+      angular不会绑定到其他组件的属性上，除非是输入属性或者输出属性
+      组件绑定到自己的属性没问题，组件的作者对绑定完全控制
+      angular要求显式的声明API，可以自己决定哪些属性是可以被外部组件绑定的
+      不能使用typescript的public和private来访问控制符的公共API
+      angular需要一些方式来标记允许被外部组件绑定的属性，而这些方式，就是@input和@output装饰器
+      ==========================
+      当然我们可以给输入和输出的属性起别名
+      <div (myClick)="clickMessage = $event" clickable></div>
+      ==========================
   </div>
 </p>
