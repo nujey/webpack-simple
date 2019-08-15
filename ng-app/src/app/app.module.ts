@@ -9,7 +9,9 @@ import { HerosComponent } from './heros/heros.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { GrammarStudyComponent } from './grammar-study/grammar-study.component'
+import { GrammarStudyComponent } from './grammar-study/grammar-study.component';
+import { AppEventemitComponent } from './app-eventemit/app-eventemit.component';
+import { DirectiveTestDirective } from './directive-test.directive'
 
 // ngModule是一个带有装饰器的类 @Ngmodule()装饰器是一个函数，接受一个元数据对象，对象的属性用来描述这个模块
 @NgModule({
@@ -21,7 +23,9 @@ import { GrammarStudyComponent } from './grammar-study/grammar-study.component'
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    GrammarStudyComponent
+    GrammarStudyComponent,
+    AppEventemitComponent,
+    DirectiveTestDirective
   ],
   // 导出表 能在其他模块的组件模版中使用的可声明对象的子集
   // 演示导出，实际上，根模块不需要导出任何东西，因为其他的模块不需要导入跟模块
