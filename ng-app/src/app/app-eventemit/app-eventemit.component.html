@@ -67,5 +67,34 @@
       当然我们可以给输入和输出的属性起别名
       <div (myClick)="clickMessage = $event" clickable></div>
       ==========================
+      模板表达式操作符
+      【管道操作符】、【安全导航操作符】
+      管道操作符就是过滤器
+      <div>Title through uppercase pipe {{title | uppercase | lowercase}}</div>
+      <div>Birthdate: {{ currentHero?.birthdate | date:'longDate'}}</div>
+      json管道对调试绑定特别有用
+      <div>{{currentHero | json}}会输出json字符串</div>
+
+      安全导航操作符(?.)\空属性路径
+
+      安全导航操作符可以避免属性中出现的null和undefined值，以免报错
+
+      【非空断言操作符(!)】
+
+      在typescript中，你可以使用 --strictNullChecks标志强制开启严格空值检查
+      typescript就会确保不存在意料之外的null或者是undefined
+
+      有类型变量默认不允许null和undefined，但是如果要把null或undefined赋值给一个不允许为空的值，就会报错
+
+      <div *ngIf="hero">
+        the hero's name is {{hero!.name}}
+      </div>
+      安全导航操作符 会防止出现null或者undefined
+      非空断言操作符 只是告诉类型检查器对特定的属性表达式 不做严格空值检测
+
+      内置模板函数
+      【类型转换函数$any()】
+      <p>the time's undeclared best by date is: {{$any(item).bestByDate}}</p>
+      <p>{{$any(this).bestByDate}}</p>
   </div>
 </p>
